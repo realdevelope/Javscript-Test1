@@ -10,9 +10,12 @@
 
 `-36제`
 36문제중 28문제 정답 -> 8문제 오답풀이 작성 - 통과!
+http://zanghscoding.iptime.org/codingcourse/quiz.php?course=javascript
+
 
 `-100제`
 100문제중 76문제 정답 -> 24문제 오답풀이 작성 - 통과!
+https://www.notion.so/JS-100-1-0465a498481c471488646526a181087f
 
 `-프로그래머스 1단계`
-하다가 중단..내일 다시 
+문제를 풀다가 보류

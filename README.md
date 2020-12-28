@@ -18,4 +18,5 @@ http://zanghscoding.iptime.org/codingcourse/quiz.php?course=javascript
 https://www.notion.so/JS-100-1-0465a498481c471488646526a181087f
 
 `-프로그래머스 1단계`
-문제를 풀다가 보류
+
+문제를 풀다가 보류.

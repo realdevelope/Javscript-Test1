@@ -1,0 +1,101 @@
+<12/27>
+1. 자바스크립트 수준확인 문제 풀기 -> 28/36 - 8개틀림
+2. 문제 풀이영상시청 및 오답정리
+3. 함수 강의 - 벨로퍼트꺼 다시보기 V
+4. 객체 강의 - 벨로퍼트꺼 다시보기V
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+<문제풀이>
+7. 다음 코드의 결과를 순서대로 나열한 것은?
+var v1 = "8";	//문자형 
+var v2 = "6";	//문자형
+
+console.log(v1 + v2);	/*+는 피연산자에 따라서 1)문자열 결합기능, 2)산술연산(더하기) 
+			  둘중에 하나가 문자열이라면 문자열을 우선으로 해서 86 이됨*/
+console.log(v1 - v2);	//-는 산술연산기능만 있음(뺴기)->문자를 숫자로 변환 8-6=2 
+console.log(v1 * v2);	//*는 산술연산기능만 있음(곱하기)-> 문자를 숫자로 변환 8*6=48
+console.log(Number(v1) + v2);	/*Number()은 Js의 내장함수->인자를 숫자로 변환 8 + "6"
+				  둘중에 하나가 문자열이라면 문자열을 우선으로 해서 "8"+"6" = 86*/
+console.log(Number(v1) + Number(v2));	//둘다 숫자이기떄문에 산술연산하여 8+6 = 14
+
+==>따라서 86 2 48 86 14 
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+12. 다음의 결과는?
+var a = 12;
+console.log(typeof(a));	//number
+
+a = "대한민국";
+console.log(typeof(a));	//string
+
+a = true;
+console.log(typeof(a));	//boolean
+
+a = {};
+console.log(typeof(a));	//object
+
+a = [];
+console.log(typeof(a));	//object  -> 빈배열은 object!!(참조형 변수)
+
+==> 따라서 number string boolean object object
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+16. 다음 for/in 문에서 출력되는 i 값을 나열하면?
+var array = new Array();
+array["a"] = "value_a";
+array["b"] = "value_b";
+array["c"] = "value_c";
+
+for(var i in array) {		//for in문은 키와 벨류중 키값을 반환한다!
+ console.log(i);
+}
+
+==>따라서 a b c 
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+18. 다음 코드에서 출력되는 sum 값은?
+var sum = 0;
+var num = -1;
+
+do {		//do while문은 while의 조건식 판단하기전 do를 먼저 수행!
+ sum += 10;	//sum = 10 -> 20 -> 30
+} while (++num<2);	//num=0 -> num=1 num =1
+
+console.log(sum);
+
+==>따라서 sum = 30
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+21. 다음 코드의 결과는 ?
+function sum(n) {
+    function add(a, b) {
+        return a + b;
+    }
+    var s = 0;
+
+    for (var i = 0; i <= n; i++) {
+        s = add(s, i);
+    }
+    return s;
+}
+
+console.log("1~3 = " + sum(3) );
+console.log("2 + 3 = " + add(2 + 3) );	     //add함수가 sum함수 안에 있는데 sum함수는 실행되고 사라지는데
+				     //사라지는 영역을 다시 호출을 할 수 없음 -> 그래서 에러가뜸
+==> 따라서 에러발생
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+26. 다음은 함수를 생성자로 사용한 예이다.
+     다음 코드의 결과는 ?
+function a(){		//
+	this.v1 = 10;
+	this.v2 = "string";
+	v3 = function(){
+		return 50;
+	}
+}
+var f = new a();
+
+console.log(f.v1 + "," + f.v2 + "," + f.v3()); 				     
+
+==>따라서 에러발생
